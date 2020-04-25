@@ -12,6 +12,12 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
+    //Try to fix jsr305.jar can not download bug
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.0'
+    }
+
     buildTypes {
         release {
             minifyEnabled false
